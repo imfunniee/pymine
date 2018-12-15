@@ -8,7 +8,7 @@ position = 0
 try:
     while True:
         #gets direction
-        x, y = pyautogui.position()
+        x, y = pyautogui.position() #y could be used for looking up idk but for now meh
         if position == 0:
             direction = 0
             position = 0
