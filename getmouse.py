@@ -1,11 +1,37 @@
 import pyautogui, sys
+from win32api import GetSystemMetrics
+
+window_width =  GetSystemMetrics(0)
+direction = 0
+position = 0
+
 try:
     while True:
-        #moves your mouse ---> pyautogui.moveTo(100, 200)
         #gets direction
         x, y = pyautogui.position()
-        positionStr = 'mouse-x: ' + str(x).rjust(4) + ' mouse-y: ' + str(y).rjust(4)
-        print(positionStr, end='')
-        print('\b' * len(positionStr),end='',flush=True)
+        if position == 0:
+            direction = 0
+            position = 0
+            position = x
+        else:
+            if x != position:
+                if x < window_width/2:
+                    direction = 1
+                    position = 0
+                    position = x
+                else:
+                    direction = 2
+                    position = 0
+                    position = x
+            else:
+                direction = 0
+                position = 0
+        print(direction)
 except KeyboardInterrupt:
     print('\n')
+
+#0 = mouse doesn't move
+#1 = move left
+#2 = moved right
+
+#pyautogui.moveTo(100, 100, 2, pyautogui.easeOutQuad)
