@@ -28,7 +28,6 @@ def check_mouse():
         else:
             direction = 2
             last_mouse_movement = give_x()
-    print(last_mouse_movement)
     return direction
 
 #0 = mouse doesn't move
