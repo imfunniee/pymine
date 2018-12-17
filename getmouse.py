@@ -1,32 +1,33 @@
 import pyautogui, sys
 from win32api import GetSystemMetrics
 
-window_width =  GetSystemMetrics(0)
-direction = 0
-position = 0
+def give_x():
+    x, y = pyautogui.position() #y could be used for looking up idk but for now meh
+    return x
 
-def mouse():
-    while True:
+last_mouse_movement = give_x()
+
+def check_if_mouse_moved():
+    now_mouse_movement = give_x()
+    if now_mouse_movement != last_mouse_movement:
+        last_mouse_movement = give_x()
+        return True
+    else:
+        return False 
+
+def check_mouse():
+    direction = 0
+    x_pos = give_x()
+    if check_if_mouse_moved() == False:
+        direction = 0
+    else:
+        window_width =  GetSystemMetrics(0)
         #gets direction
-        x, y = pyautogui.position() #y could be used for looking up idk but for now meh
-        if position == 0:
-            direction = 0
-            position = 0
-            position = x
+        if x_pos < window_width/2:
+            direction = 1
         else:
-            if x != position:
-                if x < window_width/2:
-                    direction = 1
-                    position = 0
-                    position = x
-                else:
-                    direction = 2
-                    position = 0
-                    position = x
-            else:
-                direction = 0
-                position = 0
-    return direction
+            direction = 2
+    return check_if_mouse_moved()
 
 #0 = mouse doesn't move
 #1 = move left
