@@ -10,7 +10,7 @@ Turn on the auto jump from settings
 
 🎉 Congrats
 
-## Controls
+## Controls for collecting data
 
 - ``W`` to move forward not the arrow keys
 - ``Mouse`` for left and right
