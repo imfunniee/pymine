@@ -11,10 +11,10 @@ turn on the auto jump from settings
 
 ## Controls
 
-``W`` to move forward not the arrow keys
-``Mouse`` for left and right
+- ``W`` to move forward not the arrow keys
+- ``Mouse`` for left and right
 
 ## Run
-run ``index.py``
+Run ``index.py``
 
 Tip : use ``t`` to pause stuff while collecting data
