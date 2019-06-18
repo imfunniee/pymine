@@ -32,11 +32,8 @@ def alexnet(width, height, lr):
     network = fully_connected(network, 4096, activation='tanh')
     network = dropout(network, 0.5)
     network = fully_connected(network, 3, activation='softmax')
-    network = regression(network, optimizer='momentum',
-                         loss='categorical_crossentropy',
-                         learning_rate=lr, name='targets')
+    network = regression(network, optimizer='momentum',loss='categorical_crossentropy',learning_rate=lr, name='targets')
 
-    model = tflearn.DNN(network, checkpoint_path='model_alexnet',
-                        max_checkpoints=1, tensorboard_verbose=0, tensorboard_dir='log')
+    model = tflearn.DNN(network, checkpoint_path='model_alexnet', max_checkpoints=1, tensorboard_verbose=0, tensorboard_dir='log')
 
     return model
