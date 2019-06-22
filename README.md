@@ -5,7 +5,7 @@ TOTALLY not copying https://github.com/Sentdex/pygta5 😂
 Turn on the auto jump from settings
 
 ## Steps
-- Run ``collectdata.py`` to collect data, make sure your window size is ``800x630`` and is on top of the screen
+- Run ``collectdata.py`` to collect data, make sure your window size is ``800x630`` and is on top of the screen (``0x0``)
 - Train the data by running ``train.py`` (EPOCHS : 8 change it if you want to, higher number = more precise training)
 
 🎉 Congrats
